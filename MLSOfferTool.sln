@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLSOfferTool.Web", "MLSOfferTool\MLSOfferTool.Web.csproj", "{65F9EE6B-5F95-45D6-BD17-AD6983141A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLSOfferTool.Web.Tests", "MLSOfferTool.Web.Tests\MLSOfferTool.Web.Tests.csproj", "{87B43AE9-8552-49BB-8320-2674CA90F05F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MLSOfferTool.Database", "MLSOfferTool.Database\MLSOfferTool.Database\MLSOfferTool.Database.sqlproj", "{D5B21A41-AFE6-4741-8777-F566319703E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65F9EE6B-5F95-45D6-BD17-AD6983141A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F9EE6B-5F95-45D6-BD17-AD6983141A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F9EE6B-5F95-45D6-BD17-AD6983141A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F9EE6B-5F95-45D6-BD17-AD6983141A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B43AE9-8552-49BB-8320-2674CA90F05F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B43AE9-8552-49BB-8320-2674CA90F05F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B43AE9-8552-49BB-8320-2674CA90F05F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B43AE9-8552-49BB-8320-2674CA90F05F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5B21A41-AFE6-4741-8777-F566319703E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B21A41-AFE6-4741-8777-F566319703E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B21A41-AFE6-4741-8777-F566319703E4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D5B21A41-AFE6-4741-8777-F566319703E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B21A41-AFE6-4741-8777-F566319703E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5B21A41-AFE6-4741-8777-F566319703E4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {601D6B90-15FB-42AA-BD18-A565CD243E7C}
+	EndGlobalSection
+EndGlobal
