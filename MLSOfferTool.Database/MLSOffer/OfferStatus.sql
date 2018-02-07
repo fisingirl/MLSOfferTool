@@ -1,0 +1,6 @@
+﻿CREATE TABLE [MLSOffer].[OfferStatus]
+(
+	[Id]	INT				NOT NULL	IDENTITY, 
+    [Name]	NVARCHAR(100)	NOT NULL,
+	CONSTRAINT [PK_Id] PRIMARY KEY ([Id])
+)

@@ -1,0 +1,21 @@
+﻿CREATE TABLE [MLSOffer].[Property]
+(
+	[Id]				INT				NOT NULL	IDENTITY, 
+    [Address1]			NVARCHAR(300)	NOT NULL, 
+    [Address2]			NVARCHAR(300)	NULL, 
+    [State]				NVARCHAR(100)	NOT NULL, 
+    [City]				NVARCHAR(50)	NOT NULL, 
+    [ZipCode]			NVARCHAR(50)	NOT NULL, 
+    [Country]			NVARCHAR(50)	NOT NULL,
+    [CompanyName]		NVARCHAR(100)	NOT NULL,
+    [SellerId]			INT				NOT NULL,
+    [BuyerId]			INT				NULL,
+	[PropertyValue]		MONEY			NULL, 
+    [RepairEstimate]	MONEY			NULL, 
+    [FirstOfferId]		INT				NOT NULL, 
+    [SecondOfferId]		INT				NULL, 
+    [ThirdOfferId]		INT				NULL, 
+    CONSTRAINT [PK_Property] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Property] FOREIGN KEY ([SellerId]) REFERENCES [MLSOffer].[Seller] ([Id]),
+	CONSTRAINT [FK_Property_BuyerId] FOREIGN KEY ([BuyerId]) REFERENCES [MLSOffer].[Buyer] ([Id]),
+)
