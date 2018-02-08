@@ -12,7 +12,8 @@ namespace MLSOfferTool.Services
 {
     public interface IPropertyDataService
     {
-        Property GetPropertyById(int id);
+        Property GetById(int id);
+        IEnumerable<PropertyDto> GetAll();
     }
 
     public class PropertyDataService : DataServiceBase<MlsOfferToolContext>, IPropertyDataService
@@ -23,23 +24,31 @@ namespace MLSOfferTool.Services
             {
                 this._Entity = DataContext.Properties;
             }
-
-            //this._Context = context;
-            //this._Entity = context.Properties;
         }
 
-        //private IMlsOfferToolContext _Context { get; set; }
         private IDbSet<Property> _Entity { get; set; }
 
-        public Property GetPropertyById(int id)
+        public Property GetById(int id)
         {
-            //return this._Context.Properties
-            //                    .Include("Offer")
-            //                    .SingleOrDefault(x => x.Id == id);
-
             return this._Entity.Include("Offer")
                        .SingleOrDefault(x => x.Id == id);
 
+        }
+
+        public IEnumerable<PropertyDto> GetAll()
+        {
+            var data = this._Entity
+                            .Select(x => new PropertyDto()
+                               {
+                                   Id = x.Id,
+                                   Address = x.Address1 + " " + x.Address2,
+                                   City = x.City,
+                                   ZipCode = x.ZipCode,
+                                   Seller = x.PropertySeller.FirstName + " " + x.PropertySeller.LastName
+                                })
+                           .ToList().OrderBy(x => x.Address);
+
+            return data;
         }
     }
 }

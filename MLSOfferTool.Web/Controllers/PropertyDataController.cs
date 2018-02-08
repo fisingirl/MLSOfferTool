@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using MLSOfferTool.Services;
+using Unity;
 
 namespace MLSOfferTool.Controllers
 {
@@ -11,23 +8,22 @@ namespace MLSOfferTool.Controllers
     {
         private IPropertyDataService _PropertyDataService;
 
-        public PropertyDataController() : this(null)
-        {  
-        }
-
         public PropertyDataController(IPropertyDataService propertyDataService)
         {
-            this._PropertyDataService = propertyDataService;
+            this._PropertyDataService = propertyDataService ?? DependencyConfig.Instance.Resolve<IPropertyDataService>();
         }
 
         // GET: PropertyData
         public ActionResult GetAll()
         {
-            return null;
+            var property = this._PropertyDataService.GetAll();
+            return Json(property, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult GetProperty(int id)
         {
-            return null;
+            var property = this._PropertyDataService.GetById(id);
+            return Json(property, JsonRequestBehavior.AllowGet);
         }
     }
 }
