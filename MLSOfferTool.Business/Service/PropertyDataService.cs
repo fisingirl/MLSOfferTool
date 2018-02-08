@@ -18,12 +18,9 @@ namespace MLSOfferTool.Services
 
     public class PropertyDataService : DataServiceBase<MlsOfferToolContext>, IPropertyDataService
     {
-        public PropertyDataService()
+        public PropertyDataService(IMlsOfferToolContext context)
         {
-            using (DataContext)
-            {
-                this._Entity = DataContext.Properties;
-            }
+            this._Entity = context.Properties;
         }
 
         private IDbSet<Property> _Entity { get; set; }

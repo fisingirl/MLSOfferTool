@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using MLSOfferTool.ContextConfiguration;
+using MLSOfferTool.Helpers;
 using MLSOfferTool.Models;
 using NSubstitute;
 
@@ -16,13 +17,11 @@ namespace MLSOfferTool.TestDoubles
 
         public FakeMlsOfferToolContext()
         {
-            IDbSet<Property> propertyDbSet = Substitute.For<IDbSet<Property>>();
-            propertyDbSet.Provider.Returns(this.Properties.Provider);
-            propertyDbSet.Expression.Returns(this.Properties.Expression);
-            propertyDbSet.ElementType.Returns(this.Properties.ElementType);
-            propertyDbSet.GetEnumerator().Returns(this.Properties.GetEnumerator());
-
-            //https://blog.learningtree.com/mock-entity-frameworks-dbcontext-unit-testing/
+            this.Buyers = new FakeDbSet<Buyer>();
+            this.Offers = new FakeDbSet<Offer>();
+            this.OfferStatuses = new FakeDbSet<OfferStatus>();
+            this.Properties = new FakeDbSet<Property>();
+            this.Sellers = new FakeDbSet<Seller>();
         }
 
         public IDbSet<Buyer> Buyers { get; set; }

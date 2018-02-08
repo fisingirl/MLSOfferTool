@@ -223,6 +223,7 @@
     <Compile Include="Models\Seller.cs" />
     <Compile Include="Models\StampEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDoubles\FakeDbSet.cs" />
     <Compile Include="TestDoubles\FakeMLSOfferToolContext.cs" />
   </ItemGroup>
   <PropertyGroup>
