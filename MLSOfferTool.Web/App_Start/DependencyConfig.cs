@@ -17,7 +17,6 @@ namespace MLSOfferTool
             get
             {
                 //register services
-                //_Instance.RegisterType<IPropertyDataService, PropertyDataService>(new HierarchicalLifetimeManager());
                 _Instance.RegisterType<IPropertyDataService, PropertyDataService>();
                 return _Instance;
             }

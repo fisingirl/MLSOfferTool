@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using MLSOfferTool.Helpers;
 
 namespace MLSOfferTool
 {
@@ -17,7 +18,7 @@ namespace MLSOfferTool
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //DependencyResolver.SetResolver();
+            DependencyResolver.SetResolver(new UnityDependencyResolver(DependencyConfig.Instance));
         }
     }
 }
