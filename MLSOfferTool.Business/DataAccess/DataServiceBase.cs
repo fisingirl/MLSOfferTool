@@ -46,8 +46,7 @@ namespace MLSOfferTool.DataAccess
 
         public void Dispose()
         {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
+            if(DataContext != null) DataContext.Dispose();
         }
 
         private bool _AllowSerialization { get; set; }

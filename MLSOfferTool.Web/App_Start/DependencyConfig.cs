@@ -1,5 +1,6 @@
 ﻿using MLSOfferTool.Services;
 using Unity;
+using Unity.Lifetime;
 
 namespace MLSOfferTool
 {
@@ -17,7 +18,7 @@ namespace MLSOfferTool
             get
             {
                 //register services
-                _Instance.RegisterType<IPropertyDataService, PropertyDataService>();
+                _Instance.RegisterType<IPropertyDataService, PropertyDataService>(new HierarchicalLifetimeManager());
                 return _Instance;
             }
         }
