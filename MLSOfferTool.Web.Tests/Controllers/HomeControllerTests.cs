@@ -7,10 +7,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MLSOfferTool;
 using MLSOfferTool.Controllers;
 
-namespace MLSOfferTool.Web.Tests.Controllers
+// ReSharper disable once CheckNamespace
+namespace MLSOfferTool.Controllers.Tests
 {
     [TestClass]
-    public class HomeControllerTest
+    public class HomeControllerTests
     {
         [TestMethod]
         public void Index()

@@ -6,12 +6,12 @@ namespace MLSOfferTool.Controllers
 {
     public class PropertyDataController : Controller
     {
-        private IPropertyDataService _PropertyDataService;
-
         public PropertyDataController(IPropertyDataService propertyDataService)
         {
-            this._PropertyDataService = propertyDataService ?? DependencyConfig.Instance.Resolve<IPropertyDataService>();
+            this._PropertyDataService = propertyDataService;
         }
+
+        private IPropertyDataService _PropertyDataService { get; set; }
 
         // GET: PropertyData
         public ActionResult GetAll()
